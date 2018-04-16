@@ -10,7 +10,6 @@
  */
 package org.monte.screenrecorder;
 
-import com.sun.awt.AWTUtilities;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
