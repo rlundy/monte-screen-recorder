@@ -164,7 +164,6 @@ public class ScreenRecorderMain extends javax.swing.JFrame {
             if (inputDimension != null) {
                 areaRect = new Rectangle(0, 0, inputDimension.width, inputDimension.height);
             }
-            outputDimension = outputDimension;
             Rectangle screenBounds = cfg.getBounds();
             if (areaRect == null) {
                 areaRect = (Rectangle) screenBounds.clone();
