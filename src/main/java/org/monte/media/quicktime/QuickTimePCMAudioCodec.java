@@ -13,8 +13,6 @@ package org.monte.media.quicktime;
 import org.monte.media.audio.*;
 import org.monte.media.Format;
 import java.nio.ByteOrder;
-import java.util.Arrays;
-import java.util.HashSet;
 import static org.monte.media.FormatKeys.*;
 import static org.monte.media.AudioFormatKeys.*;
 

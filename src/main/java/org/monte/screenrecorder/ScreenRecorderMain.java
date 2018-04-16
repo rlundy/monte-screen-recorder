@@ -37,7 +37,6 @@ import java.awt.AWTException;
 import java.awt.Desktop;
 import java.awt.Frame;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.prefs.Preferences;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;

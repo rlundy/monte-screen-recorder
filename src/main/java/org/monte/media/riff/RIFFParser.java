@@ -20,7 +20,6 @@ import java.io.UnsupportedEncodingException;
 import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.WeakHashMap;
 import javax.imageio.stream.ImageInputStream;
 
 /**
