@@ -77,8 +77,6 @@ public class PCMAudioCodec extends AbstractAudioCodec {
             return CODEC_FAILED;
             //throw new UnsupportedOperationException("Channel conversion not supported. in:" + inFormat + ", out:" + outFormat);
         }
-        String inEnc = inFormat.get(EncodingKey);
-        String outEnc = outFormat.get(EncodingKey);
         
         boolean fixSilenceBug=inFormat.get(SilenceBugKey,false);
         

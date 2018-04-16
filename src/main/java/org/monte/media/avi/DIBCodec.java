@@ -231,9 +231,7 @@ public class DIBCodec extends AbstractVideoCodec {
     }
 
     public void readKey4(byte[] in, int offset, int length, BufferedImage img) {
-        DataBufferByte buf = (DataBufferByte) img.getRaster().getDataBuffer();
         WritableRaster raster = img.getRaster();
-        int scanlineStride = raster.getSampleModel().getWidth();
         Rectangle r = raster.getBounds();
         r.x -= raster.getSampleModelTranslateX();
         r.y -= raster.getSampleModelTranslateY();

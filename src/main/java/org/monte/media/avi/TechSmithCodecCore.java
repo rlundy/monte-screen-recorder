@@ -200,7 +200,6 @@ public class TechSmithCodecCore extends AbstractVideoCodecCore {
         if (numEntries == 0) {
             numEntries = 256;
         }
-        int flags = in.readUnsignedShort();
         if (firstEntry + numEntries > 256) {
             throw new IOException("Illegal headers in pc chunk. firstEntry=" + firstEntry + ", numEntries=" + numEntries);
         }
@@ -241,7 +240,6 @@ public class TechSmithCodecCore extends AbstractVideoCodecCore {
         int scanlineStride = width;
         int upsideDown = (height - 1) * scanlineStride + offset;
         // Decode each scanline
-        int verticalOffset = 0;
         boolean isKeyFrame = true;
         try {
             int y = 0;
@@ -330,7 +328,6 @@ public class TechSmithCodecCore extends AbstractVideoCodecCore {
         int scanlineStride = width;
         int upsideDown = (height - 1) * scanlineStride + offset;
         // Decode each scanline
-        int verticalOffset = 0;
         boolean isKeyFrame = true;
         try {
             int y = 0;
@@ -406,7 +403,6 @@ public class TechSmithCodecCore extends AbstractVideoCodecCore {
         int scanlineStride = width;
         int upsideDown = (height - 1) * scanlineStride + offset;
         // Decode each scanline
-        int verticalOffset = 0;
         boolean isKeyFrame = true;
         try {
             int y = 0;
@@ -475,7 +471,6 @@ public class TechSmithCodecCore extends AbstractVideoCodecCore {
         int scanlineStride = width;
         int upsideDown = (height - 1) * scanlineStride + offset;
         // Decode each scanline
-        int verticalOffset = 0;
         boolean isKeyFrame = true;
         try {
             int y = 0;

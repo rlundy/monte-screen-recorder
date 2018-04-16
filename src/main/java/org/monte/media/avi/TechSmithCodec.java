@@ -92,7 +92,6 @@ public class TechSmithCodec extends AbstractVideoCodec {
     private TechSmithCodecCore state;
     private Object previousPixels;
     private int frameCounter;
-    private Object oldPixels;
     private Object newPixels;
 
     public TechSmithCodec() {

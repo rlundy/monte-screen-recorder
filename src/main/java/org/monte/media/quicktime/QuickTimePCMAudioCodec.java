@@ -29,14 +29,6 @@ import static org.monte.media.AudioFormatKeys.*;
  */
 public class QuickTimePCMAudioCodec extends PCMAudioCodec {
 
-    private final static HashSet<String> signedEncodings = new HashSet<String>(
-            Arrays.asList(new String[]{
-                ENCODING_PCM_SIGNED, ENCODING_QUICKTIME_TWOS_PCM, ENCODING_QUICKTIME_SOWT_PCM,
-                ENCODING_QUICKTIME_IN24_PCM, ENCODING_QUICKTIME_IN32_PCM,}));
-    private final static HashSet<String> unsignedEncodings = new HashSet<String>(
-            Arrays.asList(new String[]{
-                ENCODING_PCM_UNSIGNED, ENCODING_QUICKTIME_RAW_PCM}));
-
     public QuickTimePCMAudioCodec() {
         super(new Format[]{
                     new Format(MediaTypeKey, MediaType.AUDIO,//

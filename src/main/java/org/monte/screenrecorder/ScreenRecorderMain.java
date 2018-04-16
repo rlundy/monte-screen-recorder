@@ -74,8 +74,6 @@ public class ScreenRecorderMain extends javax.swing.JFrame {
         }
     }
     private Handler handler = new Handler();
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd 'at' HH.mm.ss");
-    private volatile Worker recorder;
     private ScreenRecorder screenRecorder;
     private int depth;
     private int format;
@@ -790,7 +788,6 @@ public class ScreenRecorderMain extends javax.swing.JFrame {
 
                 @Override
                 protected void finished() {
-                    ScreenRecorder.State state = r.getState();
                     setSettingsEnabled(true);
                     startStopButton.setEnabled(true);
                     startStopButton.setText("Start");

@@ -377,10 +377,8 @@ public class QuickTimeWriter extends QuickTimeOutputStream implements MovieWrite
         Track tr=tracks.get(track);
         Format fmt = tr.format;
         tr.codec = createCodec(fmt);
-        String enc = fmt.get(EncodingKey);
         if (tr.codec != null) {
             if (fmt.get(MediaTypeKey) == MediaType.VIDEO) {
-                Format vf = (Format) fmt;
                 tr.codec.setInputFormat(fmt.prepend(
                         MimeTypeKey, MIME_JAVA, EncodingKey, ENCODING_BUFFERED_IMAGE,
                         DataClassKey, BufferedImage.class));
@@ -394,7 +392,6 @@ public class QuickTimeWriter extends QuickTimeOutputStream implements MovieWrite
                 }
                 //tr.codec.setQuality(tr.videoQuality);
             } else {
-                Format vf = (Format) fmt;
                 tr.codec.setInputFormat(fmt.prepend(
                         MimeTypeKey, MIME_JAVA, EncodingKey, fmt.containsKey(SignedKey) && fmt.get(SignedKey) ? ENCODING_PCM_SIGNED : ENCODING_PCM_UNSIGNED,
                         DataClassKey, byte[].class));

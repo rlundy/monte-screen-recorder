@@ -702,10 +702,6 @@ public class AVIOutputStream extends AbstractAVIStream {
             long moviListOffset = moviChunk.offset + 8 + 8;
 
             {
-                double movieTime = 0;
-                int nTracks = tracks.size();
-                int[] trackSampleIndex = new int[nTracks];
-                long[] trackSampleCount = new long[nTracks];
                 for (Sample s : idx1) {
                     d.setByteOrder(ByteOrder.BIG_ENDIAN);
                     d.writeInt(s.chunkType); // dwChunkId
@@ -861,7 +857,6 @@ public class AVIOutputStream extends AbstractAVIStream {
             // performance. For an interleaved file, the buffer size should be large
             // enough to read an entire record, and not just a chunk.
             {
-                VideoTrack vt = null;
                 int width = 0, height = 0;
                 // FIXME - Maybe we should support a global video dimension property
                 for (Track tr : tracks) {

@@ -1592,11 +1592,8 @@ public abstract class AbstractAVIStream {
 
     protected class MidiTrack extends Track {
 
-        private final int sampleChunkFourCC;
-
         public MidiTrack(int trackIndex, int fourCC) {
             super(trackIndex, AVIMediaType.MIDI, fourCC);
-            sampleChunkFourCC = twoCC | WB_ID;
 
         }
 
@@ -1613,11 +1610,8 @@ public abstract class AbstractAVIStream {
 
     protected class TextTrack extends Track {
 
-        private final int sampleChunkFourCC;
-
         public TextTrack(int trackIndex, int fourCC) {
             super(trackIndex, AVIMediaType.TEXT, fourCC);
-            sampleChunkFourCC = twoCC | WB_ID;
 
         }
 

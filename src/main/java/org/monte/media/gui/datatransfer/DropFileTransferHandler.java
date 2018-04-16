@@ -30,9 +30,6 @@ import javax.swing.*;
  */
 public class DropFileTransferHandler extends TransferHandler {
 
-    private boolean shouldRemove;
-    private int p0;
-    private int p1;
     private int fileSelectionMode;
     private FileFilter fileFilter;
     private ActionListener actionListener;
@@ -150,7 +147,6 @@ public class DropFileTransferHandler extends TransferHandler {
      * </ol>
      */
     protected DataFlavor getImportFlavor(DataFlavor[] flavors, JComponent c) {
-        DataFlavor plainFlavor = null;
         DataFlavor refFlavor = null;
         DataFlavor stringFlavor = null;
 

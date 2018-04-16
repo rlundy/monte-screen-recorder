@@ -144,8 +144,6 @@ public class ScreenRecorderCompactMain extends javax.swing.JFrame {
         }
     }
     private Handler handler = new Handler();
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd 'at' HH.mm.ss");
-    private volatile Worker recorder;
     private ScreenRecorder screenRecorder;
     private int depth;
     private int format;
@@ -164,13 +162,9 @@ public class ScreenRecorderCompactMain extends javax.swing.JFrame {
     private static class AudioItem {
 
         private String title;
-        private int sampleRate;
-        private int bitsPerSample;
 
-        public AudioItem(String title, int sampleRate, int bitsPerSample) {
+        public AudioItem(String title) {
             this.title = title;
-            this.sampleRate = sampleRate;
-            this.bitsPerSample = bitsPerSample;
         }
 
         @Override
@@ -881,7 +875,6 @@ public class ScreenRecorderCompactMain extends javax.swing.JFrame {
 
                 @Override
                 protected void finished() {
-                    ScreenRecorder.State state = r.getState();
                     setSettingsEnabled(true);
                     startStopButton.setEnabled(true);
                     //startStopButton.setText("Start");

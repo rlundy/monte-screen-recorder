@@ -117,7 +117,6 @@ public class AbstractVideoCodecCore {
             throw new IndexOutOfBoundsException("off < 0 || len < 0 || off + len > i.length!, off=" + off + ", len=" + len);
         }
 
-        byte[] b = byteBuf;
         for (int j = off, end = off + len; j < end; j++) {
             int v = in.readUnsignedShort();
             i[j]=((v & (0x1f<<10)) << 9) | ((v & (0x1c<<10)) << 4) // red
@@ -139,7 +138,6 @@ public class AbstractVideoCodecCore {
             throw new IndexOutOfBoundsException("off < 0 || len < 0 || off + len > i.length!, off=" + off + ", len=" + len);
         }
 
-        byte[] b = byteBuf;
         for (int j = off, end = off + len; j < end; j++) {
             int v = in.readUnsignedShort();
       i[j]=((v & (0x1f<<0)) << 19) | ((v & (0x1c<<0)) << 14) // red

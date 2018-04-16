@@ -39,7 +39,6 @@ public class JRecordingAreaFrame extends javax.swing.JFrame {
 
     private final static Color backgroundColor = new Color(0x88ffffff, true);
     /** One of -1, SwingConstants.CENTER */
-    private int dragWhich = -1;
     private Insets dragInsets = new Insets(10, 10, 10, 10);
     private Dimension minSize = new Dimension(320, 240);
 
@@ -267,7 +266,6 @@ public class JRecordingAreaFrame extends javax.swing.JFrame {
         setContentPane(cp);
         getRootPane().setOpaque(true);
         cp.setOpaque(false);
-        AWTUtilities.setWindowOpaque(this, false);
 
         initComponents();
 

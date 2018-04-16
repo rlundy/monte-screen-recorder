@@ -573,7 +573,6 @@ public class ScreenRecorder extends AbstractStateModel {
          * The time the previous screen frame was captured.
          */
         private Rational prevScreenCaptureTime;
-        private final Object sync;
         private BufferedImage cursorImg, cursorImgPressed;
         private Point cursorOffset;
         private int videoTrack;
@@ -600,7 +599,6 @@ public class ScreenRecorder extends AbstractStateModel {
             this.robot = new Robot(recorder.captureDevice);
             this.mouseFormat = recorder.mouseFormat;
             this.mouseCaptures = recorder.mouseCaptures;
-            this.sync = recorder.sync;
             this.cursorImg = recorder.cursorImg;
             this.cursorImgPressed = recorder.cursorImgPressed;
             this.cursorOffset = recorder.cursorOffset;
@@ -832,7 +830,6 @@ public class ScreenRecorder extends AbstractStateModel {
         private Rectangle captureArea;
         private BlockingQueue<Buffer> mouseCaptures;
         private volatile long stopTime = Long.MAX_VALUE;
-        private long startTime;
         private Format format;
         private ScheduledFuture future;
         private volatile boolean mousePressed;
@@ -845,7 +842,6 @@ public class ScreenRecorder extends AbstractStateModel {
             this.captureDevice = recorder.captureDevice;
             this.captureArea = recorder.captureArea;
             this.mouseCaptures = recorder.mouseCaptures;
-            this.startTime = startTime;
         }
 
         public void setFuture(ScheduledFuture future) {
@@ -923,7 +919,6 @@ public class ScreenRecorder extends AbstractStateModel {
      */
     private void startAudioCapture() throws LineUnavailableException {
         audioCaptureTimer = new ScheduledThreadPoolExecutor(1);
-        int delay = 500;
         audioGrabber = new AudioGrabber(mixer, audioFormat, audioTrack, recordingStartTime, writerQueue);
         audioFuture = audioCaptureTimer.scheduleWithFixedDelay(audioGrabber, 0, 10, TimeUnit.MILLISECONDS);
         audioGrabber.setFuture(audioFuture);
@@ -963,7 +958,6 @@ public class ScreenRecorder extends AbstractStateModel {
 
         final private TargetDataLine line;
         final private BlockingQueue<Buffer> queue;
-        final private Format audioFormat;
         final private int audioTrack;
         final private long startTime;
         private volatile long stopTime = Long.MAX_VALUE;
@@ -972,12 +966,9 @@ public class ScreenRecorder extends AbstractStateModel {
         private long sequenceNumber;
         private float audioLevelLeft = AudioSystem.NOT_SPECIFIED;
         private float audioLevelRight = AudioSystem.NOT_SPECIFIED;
-        private Mixer mixer;
 
         public AudioGrabber(Mixer mixer, Format audioFormat, int audioTrack, long startTime, BlockingQueue<Buffer> queue)
                 throws LineUnavailableException {
-            this.mixer = mixer;
-            this.audioFormat = audioFormat;
             this.audioTrack = audioTrack;
             this.queue = queue;
             this.startTime = startTime;

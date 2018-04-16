@@ -71,7 +71,6 @@ public class JAudioMonitor extends javax.swing.JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        int w = getWidth();
         int h = getHeight();
         if (recorder != null) {
             float level = recorder.getAudioLevelLeft();

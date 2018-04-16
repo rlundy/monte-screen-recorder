@@ -800,7 +800,6 @@ if (DEBUG)System.out.println("RIFFParser.parseLocalChunk "+idToString(id));
         }
         return id != NULL_ID && isID(id);
     }
-    private WeakHashMap<String, String> ids;
 
     /**
      * Convert an integer IFF identifier to String.

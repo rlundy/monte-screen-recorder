@@ -30,11 +30,6 @@ import static org.monte.media.AudioFormatKeys.*;
  */
 public class AVIPCMAudioCodec extends PCMAudioCodec {
 
-    private final static HashSet<String> supportedEncodings = new HashSet<String>(
-            Arrays.asList(new String[]{
-               ENCODING_PCM_SIGNED, 
-                ENCODING_PCM_UNSIGNED, ENCODING_AVI_PCM,}));
-
    public AVIPCMAudioCodec() {
         super(new Format[]{
                     new Format(MediaTypeKey,MediaType.AUDIO,//
